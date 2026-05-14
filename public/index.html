@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aremu's - Order Food Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="text-white py-3">
+        <div class="container-fluid px-3 px-md-5">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-6">
+                    <h1 class="mb-0">Aremu's</h1>
+                </div>
+                <div class="col-6 col-md-6 text-end">
+                    <nav class="d-none d-md-flex gap-3 align-items-center justify-content-end">
+                        <a href="#home" class="text-white" style="text-decoration: none;">Home</a>
+                        <a href="#menu" class="text-white" style="text-decoration: none;">Menu</a>
+                        <a href="#order" class="text-white" style="text-decoration: none;">Order</a>
+                        <a href="#" class="text-white" id="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart"></i>
+                            <span id="cart-count" class="badge bg-danger">0</span>
+                        </a>
+                    </nav>
+                    <!-- Mobile Menu -->
+                    <div class="d-md-none d-flex gap-2 align-items-center justify-content-end">
+                        <a href="#" class="text-white" id="cart-icon-mobile" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart"></i>
+                            <span id="cart-count-mobile" class="badge bg-danger">0</span>
+                        </a>
+                        <button class="btn btn-link text-white p-0" type="button" id="mobile-menu-toggle">
+                            <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <nav class="d-md-none mt-3" id="mobile-nav" style="display: none;">
+                <a href="#home" class="text-white d-block mb-2">Home</a>
+                <a href="#menu" class="text-white d-block mb-2">Menu</a>
+                <a href="#order" class="text-white d-block mb-2">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" style="margin-top: 50px;">
+                    <h2>Welcome to Aremu's Food</h2>
+                    <p>Delicious swallow foods delivered to your doorstep. Order now and enjoy authentic Nigerian cuisine!</p>
+                    <a href="#menu" class="btn btn-success">View Menu</a>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/amala" alt="Delicious Nigerian Food" class="img-fluid rounded" style="margin-top: 50px;">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3 text-center">
+                    <i class="bi bi-truck text-success" style="font-size: 3rem;"></i>
+                    <h5>Fast Delivery</h5>
+                    <p>Get your food delivered hot and fresh to your doorstep.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="bi bi-star text-warning" style="font-size: 3rem;"></i>
+                    <h5>Authentic Taste</h5>
+                    <p>Enjoy traditional Nigerian flavors made with fresh ingredients.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="bi bi-heart text-danger" style="font-size: 3rem;"></i>
+                    <h5>Customer Favorite</h5>
+                    <p>Loved by thousands for our quality and service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Menu</h2>
+
+            <!-- Staples/Swallows Section -->
+            <h3 class="mb-3">Swallows & Staples</h3>
+            <div class="row mb-5">
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/iyan" alt="Iyan" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Iyan</h5>
+                            <p class="card-text">Pounded yam, traditional and filling with rich soups.</p>
+                            <select class="form-control form-control-sm mb-2 soup-select">
+                                <option value="">Select Soup</option>
+                                <option value="Egusi Soup">Egusi Soup</option>
+                                <option value="Vegetable Soup">Vegetable Soup</option>
+                                <option value="Ogbono Soup">Ogbono Soup</option>
+                                <option value="Ewedu Soup">Ewedu Soup</option>
+                                <option value="Gbegiri Soup">Gbegiri Soup</option>
+                            </select>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Iyan" data-price="1500">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/eba" alt="Eba" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Eba</h5>
+                            <p class="card-text">Garri-based swallow perfect with egusi or vegetable soup.</p>
+                            <select class="form-control form-control-sm mb-2 soup-select">
+                                <option value="">Select Soup</option>
+                                <option value="Egusi Soup">Egusi Soup</option>
+                                <option value="Vegetable Soup">Vegetable Soup</option>
+                                <option value="Ogbono Soup">Ogbono Soup</option>
+                                <option value="Ewedu Soup">Ewedu Soup</option>
+                                <option value="Gbegiri Soup">Gbegiri Soup</option>
+                            </select>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Eba" data-price="1200">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/amala" alt="Amala" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Amala</h5>
+                            <p class="card-text">Yam flour swallow, a Yoruba delicacy with gbegiri and ewedu.</p>
+                            <select class="form-control form-control-sm mb-2 soup-select">
+                                <option value="">Select Soup</option>
+                                <option value="Egusi Soup">Egusi Soup</option>
+                                <option value="Vegetable Soup">Vegetable Soup</option>
+                                <option value="Ogbono Soup">Ogbono Soup</option>
+                                <option value="Ewedu Soup">Ewedu Soup</option>
+                                <option value="Gbegiri Soup">Gbegiri Soup</option>
+                            </select>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Amala" data-price="1400">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/fufu" alt="Fufu" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Fufu</h5>
+                            <select class="form-control form-control-sm mb-2 soup-select">
+                                <option value="">Select Soup</option>
+                                <option value="Egusi Soup">Egusi Soup</option>
+                                <option value="Vegetable Soup">Vegetable Soup</option>
+                                <option value="Ogbono Soup">Ogbono Soup</option>
+                                <option value="Ewedu Soup">Ewedu Soup</option>
+                                <option value="Gbegiri Soup">Gbegiri Soup</option>
+                            </select>
+                            <p class="card-text">Cassava and plantain mash, perfect with light soups.</p>
+                            <p class="price">₦1300</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Fufu" data-price="1300">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/semo" alt="Semo" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Semo</h5>
+                            <select class="form-control form-control-sm mb-2 soup-select">
+                                <option value="">Select Soup</option>
+                                <option value="Egusi Soup">Egusi Soup</option>
+                                <option value="Vegetable Soup">Vegetable Soup</option>
+                                <option value="Ogbono Soup">Ogbono Soup</option>
+                                <option value="Ewedu Soup">Ewedu Soup</option>
+                                <option value="Gbegiri Soup">Gbegiri Soup</option>
+                            </select>
+                            <p class="card-text">Semolina swallow, smooth and easy to eat with soups.</p>
+                            <p class="price">₦1100</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Semo" data-price="1100">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <img src="images/rice" alt="Rice" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Rice</h5>
+                            <p class="card-text">Delicious Nigerian rice dish with vegetables and spices.</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Rice" data-price="1600">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meat Section -->
+            <h3 class="mb-3">Meat Options</h3>
+            <div class="row mb-5">
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Beef</h5>
+                            <p class="card-text">Premium quality beef cuts.</p>
+                            <p class="price">₦800</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Beef" data-price="800">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Chicken</h5>
+                            <p class="card-text">Fresh tender chicken pieces.</p>
+                            <p class="price">₦700</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Chicken" data-price="700">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fish</h5>
+                            <p class="card-text">Fresh fish fillets.</p>
+                            <p class="price">₦900</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Fish" data-price="900">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Goat</h5>
+                            <p class="card-text">Tender goat meat pieces.</p>
+                            <p class="price">₦1000</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Goat" data-price="1000">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Turkey</h5>
+                            <p class="card-text">Juicy turkey meat.</p>
+                            <p class="price">₦950</p>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control" min="1" value="1" placeholder="Qty">
+                                <button class="btn btn-success add-to-cart" data-item="Turkey" data-price="950">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart" class="mb-4">
+                        <h4>Cart</h4>
+                        <ul id="cart-items" class="list-group"></ul>
+                        <p id="total">Total: ₦0.00</p>
+                    </div>
+                    <form id="order-form">
+                        <h4>Order Details</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="order" class="order bg-light py-5">
+
+    </section>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2023 Aremu Eatry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

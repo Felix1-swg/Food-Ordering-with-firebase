@@ -1,0 +1,311 @@
+/* Custom styles for Aremu Eatry */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+header {
+    background: #1a1a1a !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid #FFD700;
+}
+
+header nav a {
+    font-size: 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+.hero {
+    background: #1a1a1a;
+    color: white;
+    animation: fadeIn 2s ease-in;
+    margin-top: -60px;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+.hero .row:last-child {
+    justify-content: center;
+}
+
+.hero .row:last-child .col-md-3 {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 10px;
+}
+
+.hero i {
+    font-size: 2.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.menu h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu h3 {
+    font-size: 1.5rem;
+}
+
+.menu .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .card .card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+.menu .card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.menu .card h5 {
+    font-size: 1.1rem;
+}
+
+.menu .card p {
+    font-size: 0.9rem;
+}
+
+.menu .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.price {
+    font-weight: bold;
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.add-to-cart {
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+    background-color: #FFD700;
+    color: #1a1a1a;
+    border-color: #FFD700;
+}
+
+.add-to-cart:hover {
+    background-color: #FFC700;
+    color: #1a1a1a;
+    border-color: #FFC700;
+}
+
+#cart-items .list-group-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#cart-items .cart-item-info {
+    flex-grow: 1;
+}
+
+#total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.order {
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.menu .input-group {
+    display: flex;
+    gap: 2px;
+}
+
+.menu .input-group input {
+    max-width: 80px;
+}
+
+/* Responsive Design */
+
+/* Mobile (extra small screens) */
+@media (max-width: 575px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
+    header nav {
+        display: none;
+    }
+    
+    header nav.mobile-open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #0a0a0a;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    
+    .hero img {
+        display: none;
+    }
+    
+    .hero .col-md-6 {
+        max-width: 100%;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero .btn {
+        font-size: 0.95rem;
+    }
+    
+    .hero .row:last-child .col-md-3 {
+        flex: 0 0 calc(50% - 10px);
+        margin: 5px;
+    }
+    
+    .menu .card {
+        min-height: 350px;
+    }
+    
+    .hero i {
+        font-size: 2rem;
+    }
+    
+    header .col-md-6 {
+        width: 100%;
+        text-align: left !important;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .menu .row .col-md-2 {
+        flex: 0 0 calc(50% - 7.5px);
+        max-width: calc(50% - 7.5px);
+    }
+    
+    .form-control, .btn {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 768px) {
+    .menu .row .col-md-2 {
+        flex: 0 0 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+    
+    .hero .row:last-child .col-md-3 {
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    header nav a {
+        font-size: 0.9rem;
+        margin-right: 1rem !important;
+    }
+}
+
+/* Small desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu .row .col-md-2 {
+        flex: 0 0 calc(33.333% - 15px);
+        max-width: calc(33.333% - 15px);
+    }
+    
+    .hero .row:last-child .col-md-3 {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+/* Large desktops */
+@media (min-width: 1025px) {
+    .menu .row .col-md-2 {
+        flex: 0 0 calc(16.666% - 15px);
+        max-width: calc(16.666% - 15px);
+    }
+}
+
+.menu .input-group input[type="number"] {
+    max-width: 60px;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.menu .input-group .btn {
+    flex: 1;
+    padding: 0.375rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero .row {
+        text-align: center;
+    }
+    .hero img {
+        margin-top: 20px;
+    }
+}
